@@ -22,8 +22,8 @@
 <header class="header">
     <div class="header__container container d-flex align-items-center">
         <div class="header__logo-brand">
-            <img src="{{ getLogoUrl() }}" alt="logo-image" class="header__logo">
-            <span class="header__brand-name">{{getAppName()}}</span>
+            <img src="{{ mix('img/telemedicine-logo-black.png') }}" alt="logo-image" class="header__logo">
+            {{-- <span class="header__brand-name">{{getAppName()}}</span> --}}
         </div>
         <div class="header__bar">
             <i class="fa fa-bars" aria-hidden="true" id="barIcon"></i>
@@ -34,10 +34,10 @@
                     <a href="{{ url('/conversations') }}" class="header__link">{{ __('messages.chat') }}</a>
                 @else
                     @if (Route::has('login'))
-                        <a href="{{ route('login') }}" class="header__link">{{ __('messages.login') }}</a>
+                        <a href="{{ route('login') }}" class="header__link">Masuk</a>
                     @endif
                     @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="header__link">{{ __('messages.register') }}</a>
+                        <a href="{{ route('register') }}" class="header__link">Daftar</a>
                     @endif
                 @endauth
             </nav>
@@ -48,22 +48,22 @@
 <!--landing section-->
 <section class="landing d-flex align-items-center">
     <div class="landing__illustration">
-        <img src="{{asset('assets/images/chat-illustrator.png')}}" alt="">
+        <img src="{{asset('img/slider1.png')}}" height="500px" alt="">
     </div>
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-12">
                 <h1 class="landing__heading">{{ getAppName() }}</h1>
-                <div class="landing__sub-heading">{{ __('messages.landing__sub-heading') }}</div>
+                <div class="landing__sub-heading">Lebih dekat dengan kami</div>
                 <p class="landing__description">
-                    {{ __('messages.landing__description') }}
+                    Konsultasikan kesehatan anda dari jarak jauh bersama Dokter Ahli kami secara Gratis tanpa dipungut biaya.
                 </p>
-                <button class="landing__get-start-btn primary-btn btn text-white">
-                    {{ __('messages.buy_now') }}
+                <button class="landing__get-start-btn primary-btn btn text-white" onclick="window.location.href='{{ route('register') }}'">
+                    Daftar Sekarang
                 </button>
             </div>
             <div class="col-12 landing__responsive-col">
-                <img src="{{asset('assets/images/chat-illustrator.png')}}" alt="landing image" class="img-fluid">
+                <img src="{{asset('img/slider1.png')}}" alt="landing image" class="img-fluid">
             </div>
         </div>
     </div>
@@ -74,30 +74,30 @@
         <div class="row">
             <div class="feature__box-col col-12 col-sm-6 col-lg-3">
                 <div class="feature__box text-center">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <div class="feature__box-title">{{ __('messages.beautiful_design') }}</div>
-                    <p>{{ __('messages.beautiful_design_desc') }}</p>
+                    <i class="fa fa-grav" aria-hidden="true"></i>
+                    <div class="feature__box-title">User Friendly</div>
+                    <p>Mudah diakses oleh pengguna baru</p>
                 </div>
             </div>
             <div class="feature__box-col col-12 col-sm-6 col-lg-3">
                 <div class="feature__box text-center">
                     <i class="fa fa-comments" aria-hidden="true"></i>
-                    <div class="feature__box-title">{{ __('messages.realtime_conversations') }}</div>
-                    <p>{{ __('messages.realtime_conversations_desc') }}</p>
+                    <div class="feature__box-title">Realtime Chat</div>
+                    <p>Percakapan secara langsung</p>
                 </div>
             </div>
             <div class="feature__box-col  col-sm-6 col-lg-3">
                 <div class="feature__box text-center">
                     <i class="fa fa-lock" aria-hidden="true"></i>
-                    <div class="feature__box-title">{{ __('messages.privacy') }}</div>
-                    <p>{{ __('messages.privacy_desc') }}</p>
+                    <div class="feature__box-title">Privacy</div>
+                    <p>Percakapan End to End</p>
                 </div>
             </div>
             <div class="feature__box-col col-12 col-sm-6 col-lg-3">
                 <div class="feature__box text-center">
                     <i class="fa fa-cog" aria-hidden="true"></i>
-                    <div class="feature__box-title">{{ __('messages.easy_installation') }}</div>
-                    <p>{{ __('messages.easy_installation_desc') }}</p>
+                    <div class="feature__box-title">Expert Doctor</div>
+                    <p>Dokter ahli kami akan merespon chat anda segera</p>
                 </div>
             </div>
         </div>
@@ -105,7 +105,7 @@
 </section>
 <!--feature section-->
 <!--feature-brief-->
-<section class="feature-brief section-spacing-bottom section-spacing-top">
+{{-- <section class="feature-brief section-spacing-bottom section-spacing-top">
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-6">
@@ -167,13 +167,14 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 <!--/feature-brief-->
+
 <!--testimonials-->
 <section class="testimonials section-spacing-bottom section-spacing-top">
-    <div class="text-center text-uppercase testimonials__section-title">{{ __('messages.testimonials') }}</div>
+    <div class="text-center text-uppercase testimonials__section-title">Testimoni</div>
     <div class="container">
-        <div class="testimonials__heading text-center">{{ __('messages.what_customers_say') }}</div>
+        <div class="testimonials__heading text-center">Apa kata mereka?</div>
         <div class="row">
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="testimonials__box">
@@ -236,11 +237,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div><br><br>
 </section>
 <!--/testimonials-->
 <!--start-using -->
-<section class="start-using-now section-spacing-top section-spacing-bottom">
+{{-- <section class="start-using-now section-spacing-top section-spacing-bottom">
     <div class="start-using-now__inner section-spacing-top section-spacing-bottom">
         <div class="start-using-now__content">
             <div class="container">
@@ -259,43 +260,52 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 <!--/ start-using -->
 <!--footer-->
 <footer class="footer">
     <div class="footer__container container">
         <div class="row">
-            <div class="col-md-6">
-                <h4>{{ __('messages.follow_us') }}</h4>
-                <ul>
-                    <li>
-                        <a href="//twitter.com/infyom" target="_blank">{{ __('messages.twitter') }}</a>
-                    </li>
-                    <li>
-                        <a href="//www.facebook.com/infyom" target="_blank">{{ __('messages.facebook') }}</a>
-                    </li>
-                    <li>
-                        <a href="//in.linkedin.com/company/infyom-technologies"
-                           target="_blank">{{ __('messages.linkedin') }}</a>
-                    </li>
-                    <li>
-                        <a href="//github.com/InfyOmLabs" target="_blank">{{ __('messages.github') }}</a>
-                    </li>
-                </ul>
+            <div class="col-md-4">
+                <h4>Our Company</h4>
+                <img src="{{ asset('img/landing-logotext.png') }}" alt=""><br><br>
+                <img src="{{ asset('img/KARS Bintang 2.png') }}" alt="">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
+                <h4>Ikuti kami</h4>
+                <p>
+                    <li>
+                        <a href="https://twitter.com/pkusukoharjo/" target="_blank">Twitter</a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/pku.sukoharjo/" target="_blank">Facebook</a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/pku.sukoharjo/" target="_blank">Instagram</a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/channel/UChgodAUFt7N3Hfcs6RPlOTQ/" target="_blank">Youtube</a>
+                    </li>
+                    <li>
+                        <a href="https://www.pkusukoharjo.com" target="_blank">Website</a>
+                    </li>
+                </p>
+            </div>
+            <div class="col-md-4">
                 <div>
-                    <h4>{{ __('messages.made_with') }} <i class="fa fa-heart"
-                                                          data-v-77d216a1=""></i> {{ __('messages.by_infyom_technologies') }}
-                    </h4>
-                    <p> {{ __('messages.by_infyom_technologies_desc') }} </p>
+                    <h4>Kontak Kami</h4>
+                    <p>
+                        <i class="fa fa-phone"></i>&nbsp; : (0271) 593979 <br>
+                        <i class="fa fa-envelope"></i> : pku.sukoharjo@gmail.com <br>
+                        <i class="fa fa-map"></i> : Jl.Mayor Sunaryo No.37 Sukoharjo (57512) <br>
+                    </p>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
                 <div class="copyright text-center">
-                    <p>Copyright © 2019. <a href="http://www.infyom.com/" target="_blank"><b>{{ getCompanyName() }}</b></a>
+                    <p>Copyright © 2021. <a target="_blank"><b>{{ getCompanyName() }}</b></a>
                     </p>
                 </div>
             </div>

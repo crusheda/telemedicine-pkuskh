@@ -1,6 +1,6 @@
 @extends('layouts.auth_layout')
 @section('title')
-    {{ __('messages.login') }}
+    Masuk
 @endsection
 @section('meta_content')
     - {{ __('messages.login') }} {{ __('messages.to') }} {{getAppName()}}
@@ -23,8 +23,8 @@
                         @endif
                         <form method="post" action="{{ url('/login') }}" id="loginForm">
                             {{ csrf_field() }}
-                            <h1>{{ __('messages.login') }}</h1>
-                            <p class="text-muted">{{ __('messages.sign_in_to_your_account') }}</p>
+                            <img src="{{asset('img/landing-logotext.png')}}" alt=""><hr>
+                            <p class="text-muted">Masuk untuk memulai Percakapan</p>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">
@@ -60,23 +60,23 @@
                                 <div class="input-group mb-3">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" name="remember"> {{ __('messages.remember_me') }}
+                                            <input type="checkbox" name="remember"> Ingat Saya
                                         </label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-6">
                                         <button class="btn btn-primary px-4" type="button"
-                                                id="loginBtn">{{ __('messages.login') }}</button>
+                                                id="loginBtn">Masuk</button>
                                     </div>
                                     <div class="col-6 text-right">
                                         <a class="btn btn-link px-0" href="{{ url('/password/reset') }}">
-                                            {{ __('messages.forgot_password?') }}
+                                            Lupa Password?
                                         </a>
                                     </div>
                                 </div>
                         </form>
-                            <div class="row mt-2">
+                            {{-- <div class="row mt-2">
                                 <div class="col-12">
                                     <button class="form-control loginBtn loginBtn--google align-items-center">
                                         <a href="{{ url('/login/google') }}"
@@ -87,17 +87,17 @@
                                            style="color: white; text-decoration: none">Login with Facebook</a>
                                     </button>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
 
                     <div class="card text-white bg-primary py-5 d-md-down-none text-center" style="width:44%">
                         <div class="row card-body text-center  h-100">
                             <div class="col-12 sign-up-div">
-                                <h2>{{ __('messages.sign_up') }}</h2>
-                                <p>{{ __('messages.sign_up_msg') }}</p>
+                                <h2>Belum Daftar?</h2>
+                                <p>Lakukan pendaftaran terlebih dahulu untuk Masuk ke halaman Percakapan</p>
                                 <a class="btn btn-primary active mt-3"
-                                   href="{{ url('/register') }}">{{ __('messages.register_now!') }}</a>
+                                   href="{{ url('/register') }}">Daftar Sekarang</a>
                             </div>
                         </div>
                     </div>

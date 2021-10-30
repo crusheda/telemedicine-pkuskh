@@ -17,8 +17,8 @@
                         @include('flash::message')
                         <form method="post" action="{{ url('/password/email') }}" id="forgetPasswordForm">
                             {{ csrf_field() }}
-                            <h1>{{ __('messages.forgot_your_password') }}</h1>
-                            <p class="text-muted">{{ __('messages.enter_email_to_reset_password') }}</p>
+                            <img src="{{asset('img/landing-logotext.png')}}" alt=""><hr>
+                            <p class="text-muted">Reset Password Akun</p>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">

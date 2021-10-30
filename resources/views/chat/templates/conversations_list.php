@@ -29,10 +29,10 @@
                     </div>
                    <div class="dropdown-menu dropdown-menu-right more-btn-conversation-item">
                        <a class="dropdown-item text-center chat__person-box-delete more-delete-option">
-                            Delete
+                            Hapus
                         </a>
                         <a class="dropdown-item text-center chat__person-box-archive">
-                            Archive Chat
+                            Arsipkan Chat
                         </a>
                    </div>
                 </div>

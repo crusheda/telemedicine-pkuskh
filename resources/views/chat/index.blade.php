@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-    {{ __('messages.conversations') }}
+    Chat
 @endsection
 @section('page_css')
     <link rel="stylesheet" href="{{ asset('css/dropzone.css') }}">
@@ -16,7 +16,7 @@
                 <!-- left section of chat area (chat person selection area) -->
                 <div class="chat__people-wrapper chat__people-wrapper--responsive">
                     <div class="chat__people-wrapper-header">
-                        <span class="h3 mb-0">{{ __('messages.conversations') }}</span>
+                        <span class="h3 mb-0">Percakapan</span>
                         <div class="d-flex chat__people-wrapper-btn-group">
                             <i class="nav-icon fa fa-bars align-top chat__people-wrapper-bar"></i>
                             @if($enableGroupSetting == 1)
@@ -24,14 +24,14 @@
                                  data-target="#createNewGroup">
                                 <i class="nav-icon group-icon color-green" data-toggle="tooltip"
                                    data-placement="bottom"
-                                   title="{{ __('messages.create_new_group') }}"><img
+                                   title="Buat Grup Baru"><img
                                             src="{{asset('assets/icons/group30.png')}}"></i>
                             </div>
                             @endif
                             <div class="chat__people-wrapper-button" data-toggle="modal"
                                  data-target="#addNewChat">
                                 <i class="nav-icon " data-toggle="tooltip" data-placement="bottom"
-                                   title="{{ __('messages.new_conversation') }}"><img
+                                   title="Percakapan Baru"><img
                                             src="{{asset('assets/icons/chat30.png')}}"></i>
                             </div>
                         </div>
@@ -39,19 +39,17 @@
                     <div class="chat__search-wrapper">
                         <div class="chat__search clearfix chat__search--responsive">
                             <i class="fa fa-search"></i>
-                            <input type="search" placeholder="{{ __('messages.search') }}" class="chat__search-input"
+                            <input type="search" placeholder="Pencarian" class="chat__search-input"
                                    id="searchUserInput">
                             <i class="fa fa-search d-lg-none chat__search-responsive-icon"></i>
                         </div>
                     </div>
                     <ul class="nav nav-tabs chat__tab-nav" id="chatTabs">
                         <li class="nav-item">
-                            <a data-toggle="tab" id="activeChatTab" class="nav-link active" href="#chatPeopleBody">Active
-                                Chat</a>
+                            <a data-toggle="tab" id="activeChatTab" class="nav-link active" href="#chatPeopleBody">Chat Aktif</a>
                         </li>
                         <li class="nav-item">
-                            <a data-toggle="tab" id="archiveChatTab" class="nav-link" href="#archivePeopleBody">Archive
-                                Chat</a>
+                            <a data-toggle="tab" id="archiveChatTab" class="nav-link" href="#archivePeopleBody">Arsip</a>
                         </li>
                     </ul>
                     <div class="tab-content chat__tab-content">
@@ -62,7 +60,7 @@
                             <div class="text-center no-conversation">
                                 <div class="chat__no-conversation">
                                     <div class="text-center"><i class="fa fa-2x fa-user" aria-hidden="true"></i></div>
-                                    {{ __('messages.no_conversation_found') }}
+                                    Tidak ada percakapan.
                                 </div>
                             </div>
                         </div>
@@ -70,7 +68,7 @@
                             <div class="text-center no-archive-conversation">
                                 <div class="chat__no-archive-conversation">
                                     <div class="text-center"><i class="fa fa-2x fa-user" aria-hidden="true"></i></div>
-                                    {{ __('messages.no_conversation_found') }}
+                                    Tidak ada arsip percakapan.
                                 </div>
                             </div>
                         </div>

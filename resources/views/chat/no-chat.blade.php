@@ -2,5 +2,5 @@
     <div class="text-center">
         <i class="fa fa-comments font-4xl" aria-hidden="true"></i>
     </div>
-    {{ __('messages.no_conversation_selected_yet') }}
+    Tidak ada percakapan yang dipilih...
 </div>

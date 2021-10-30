@@ -1,6 +1,6 @@
 @extends('layouts.auth_layout')
 @section('title')
-    {{ __('messages.register') }}
+    Daftar Akun
 @endsection
 @section('meta_content')
     - {{ __('messages.register') }} {{ __('messages.to') }} {{getAppName()}}
@@ -16,8 +16,8 @@
                 <div class="card-body p-4">
                     <form method="post" action="{{ url('/register') }}" id="registerForm">
                         {{ csrf_field() }}
-                        <h1>{{ __('messages.register') }}</h1>
-                        <p class="text-muted">{{ __('messages.create_your_account') }}</p>
+                        <img src="{{asset('img/landing-logotext.png')}}" alt=""><hr>
+                        <p class="text-muted">Daftar Akun Telemedicine</p>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                               <span class="input-group-text">
@@ -25,7 +25,7 @@
                               </span>
                             </div>
                             <input type="text" class="form-control {{ $errors->has('name')?'is-invalid':'' }}" name="name" value="{{ old('name') }}"
-                                   placeholder="{{ __('messages.full_name') }}" id="name">
+                                   placeholder="Nama Lengkap" id="name">
                             @if ($errors->has('name'))
                                 <span class="invalid-feedback">
                                     <strong>{{ $errors->first('name') }}</strong>
@@ -67,16 +67,15 @@
                               </span>
                             </div>
                             <input type="password" name="password_confirmation" class="form-control"
-                                   placeholder="{{ __('messages.confirm_password') }}" id="password_confirmation" onkeypress="return avoidSpace(event)">
+                                   placeholder="Konfirmasi Password" id="password_confirmation" onkeypress="return avoidSpace(event)">
                             @if ($errors->has('password_confirmation'))
                                 <span class="help-block">
                                   <strong>{{ $errors->first('password_confirmation') }}</strong>
                                </span>
                             @endif
                         </div>
-                        <button type="button" id="registerBtn"
-                                class="btn btn-primary btn-block btn-flat">{{ __('messages.register') }}</button>
-                        <a href="{{ url('/login') }}" class="text-center">{{ __('messages.already_have_membership') }}</a>
+                        <button type="button" id="registerBtn" class="btn btn-primary btn-block btn-flat">Daftar</button><br>
+                        <center><a href="{{ url('/login') }}" class="text-center">Sudah punya Akun?</a></center>
                     </form>
                 </div>
             </div>

@@ -108,9 +108,9 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" href="{{url('/')}}">
-        <img class="navbar-brand-full" src="{{ getThumbLogoUrl() }}" width="30" height="30"
+        <img class="navbar-brand-full" src="{{asset('img/logo-index-telemedicine.png')}}" height="15"
              alt="Infyom Logo">
-        <img class="navbar-brand-minimized" src="{{ getThumbLogoUrl() }}" width="30"
+        <img class="navbar-brand-minimized" src="{{asset('img/pku_brand.png')}}"
              height="30" alt="Infyom Logo">
     </a>
     <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
@@ -185,12 +185,12 @@
 @include('partials.set_custom_status_modal')
 <footer class="app-footer">
     <div>
-        <a href="https://chat.infyom.com/">{{ getAppName() }}</a>
-        <span>&copy; 2019 - {{date('Y')}} {{ getCompanyName() }}.</span>
+        <a>{{ getAppName() }}</a>
+        <span>&copy;{{date('Y')}} {{ getCompanyName() }}.</span>
     </div>
     <div class="ml-auto">
-        <span>Powered by</span>
-        <a href="https://coreui.io">CoreUI</a>
+        <span>Develop by</span>
+        <a>krus</a>
     </div>
 </footer>
 </body>
